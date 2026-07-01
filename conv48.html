@@ -142,7 +142,7 @@
                     <div class="p-3 bg-blue-50 rounded-xl"><i data-lucide="users" class="w-6 h-6"></i></div>
                     <div>
                         <h2 class="text-xl font-bold">Conformación de la Alianza</h2>
-                        <p class="text-xs text-red-500 font-semibold">* Requisito Habilitante Mínimo</p>
+                        <p class="text-xs text-red-500 font-semibold">* Cuidado: Mínimo para Habilitar vs Mínimo para Puntuar</p>
                     </div>
                 </div>
 
@@ -153,15 +153,21 @@
                             El proponente (ejecutor) <strong>debe ser un Actor Reconocido</strong> por Minciencias (con reconocimiento vigente) o una <strong>IES</strong> con experiencia previa (mín. 2 proyectos CTeI en los últimos 8 años en rol de ejecutor).
                         </p>
                     </div>
-                    <div class="bg-green-50 border-l-4 border-minciencias-green p-3 rounded-r-lg">
-                        <p class="text-sm text-slate-700">
-                            <strong class="text-minciencias-green flex items-center gap-1 mb-1"><i data-lucide="trending-up" class="w-4 h-4"></i> Aliados extra ¡Mejoran tu puntaje!</strong> 
-                            Cumplir los 4 actores obligatorios (alianza básica) otorga 1 punto. Agregar un Centro/Instituto reconocido (<em>Alianza Media</em>) da <strong>3 puntos</strong>. Sumar además a una CAR, Parques Nacionales o Instituto del SINA (<em>Alianza Avanzada</em>) otorga el máximo de <strong>5 puntos</strong> en este criterio.
+                    
+                    <!-- NEW WARNING SECTION -->
+                    <div class="bg-rose-50 border-l-4 border-rose-500 p-3 rounded-r-lg relative overflow-hidden">
+                        <i data-lucide="alert-triangle" class="absolute -right-2 -bottom-2 w-16 h-16 text-rose-100 opacity-50"></i>
+                        <p class="text-sm text-slate-700 relative z-10">
+                            <strong class="text-rose-600 flex items-center gap-1 mb-1"><i data-lucide="alert-circle" class="w-4 h-4"></i> ¡La Trampa de los 5 vs 6 Aliados!</strong> 
+                            Cumplir los 4 tipos de actores obligatorios requiere mínimo <strong>5 entidades</strong> (1 IES + 1 Org + 2 ET + 1 Empresa). Esto te <em>habilita</em>, pero te da <strong>0 puntos</strong>. <br><br>
+                            Para ganar <strong>1 punto</strong> (Alianza Básica), debes sumar un <strong>6to aliado</strong> adicional de libre elección. <br>
+                            Para <strong>3 puntos</strong>, suma un Centro/Instituto Reconocido.<br>
+                            Para <strong>5 puntos</strong>, suma actores del SINA (CAR, Parques Nac., etc).
                         </p>
                     </div>
                 </div>
 
-                <h3 class="text-sm font-bold text-slate-700 mb-3 border-b border-slate-200 pb-1">Actores Mínimos Obligatorios:</h3>
+                <h3 class="text-sm font-bold text-slate-700 mb-3 border-b border-slate-200 pb-1">Actores Mínimos Obligatorios (Habilitantes):</h3>
 
                 <div class="grid grid-cols-2 gap-3 mb-4">
                     <button onclick="showAlianzaInfo('ies')" class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all flex flex-col items-center text-center gap-2 group">
@@ -333,7 +339,7 @@
                     <!-- Progress Bar 5 -->
                     <div>
                         <div class="flex justify-between text-xs font-semibold mb-1">
-                            <span>Enfoque Diferencial</span>
+                            <span>Enfoque Diferencial (Incluye PDET/ZOMAC)</span>
                             <span class="text-rose-500">10 pts</span>
                         </div>
                         <div class="w-full bg-slate-200 rounded-full h-2">
@@ -343,6 +349,27 @@
                 </div>
             </div>
 
+        </div>
+
+        <!-- Enfoque Territorial y Diferencial (PDET / ZOMAC) -->
+        <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200 border-l-4 border-l-rose-500">
+            <div class="flex items-center gap-3 mb-4 text-rose-600">
+                <div class="p-3 bg-rose-50 rounded-xl"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                <h2 class="text-xl font-bold">Enfoque Territorial (PDET / ZOMAC)</h2>
+            </div>
+            <p class="text-sm text-slate-700 mb-4">
+                La convocatoria reconoce las desigualdades históricas y otorga <strong>puntos adicionales en la evaluación (Criterio 5.3)</strong> a los proyectos que tengan presencia, implementación y gobernanza en <strong>Municipios PDET</strong> (Programas de Desarrollo con Enfoque Territorial) o <strong>ZOMAC</strong> (Zonas Más Afectadas por el Conflicto Armado).
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-4 hover:border-rose-300 transition-colors">
+                    <div class="bg-rose-100 text-rose-700 font-black px-4 py-2 rounded-lg text-lg text-center min-w-[4.5rem]">+2<br><span class="text-[10px] uppercase tracking-wide">pts</span></div>
+                    <p class="text-sm text-slate-600">El proyecto hace presencia e intervención en al menos <strong>dos (2)</strong> municipios PDET o ZOMAC.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-4 hover:border-rose-300 transition-colors">
+                    <div class="bg-rose-100 text-rose-700 font-black px-4 py-2 rounded-lg text-lg text-center min-w-[4.5rem]">+1<br><span class="text-[10px] uppercase tracking-wide">pt</span></div>
+                    <p class="text-sm text-slate-600">El proyecto hace presencia e intervención en <strong>un (1)</strong> municipio PDET o ZOMAC.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Flujo de Postulación (Interactive Stepper) -->
