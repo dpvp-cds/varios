@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Interactiva - Convocatoria 48 SGR Minciencias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        minciencias: {
+                            blue: '#004884',
+                            green: '#00A859',
+                            light: '#F0F9FF',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+        .step-active .step-icon { background-color: #00A859; color: white; border-color: #00A859; }
+        .step-active .step-line { background-color: #00A859; }
+        .accordion-content { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto space-y-8 animate-fade-in-up">
+        
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-minciencias-blue to-blue-600 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 opacity-10 transform translate-x-1/4 -translate-y-1/4">
+                <i data-lucide="leaf" class="w-64 h-64"></i>
+            </div>
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold tracking-wide">SGR Minciencias</span>
+                    <span class="bg-minciencias-green px-3 py-1 rounded-full text-sm font-semibold tracking-wide flex items-center gap-1">
+                        <i data-lucide="microscope" class="w-4 h-4"></i> CTeI
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Convocatoria 48</h1>
+                <p class="text-lg md:text-xl max-w-3xl font-light text-blue-100">
+                    Soluciones de Ciencia, Tecnología e Innovación para el aprovechamiento sostenible de la biodiversidad, la productividad y el fortalecimiento territorial.
+                </p>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Objetivo (Col 1) -->
+            <div class="glass-card rounded-2xl p-6 md:col-span-1 border-t-4 border-t-minciencias-green transform transition hover:-translate-y-1">
+                <div class="flex items-center gap-3 mb-4 text-minciencias-blue">
+                    <div class="p-3 bg-blue-50 rounded-xl"><i data-lucide="target" class="w-6 h-6"></i></div>
+                    <h2 class="text-xl font-bold">Objetivo Principal</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    Contribuir al fortalecimiento de las capacidades territoriales, el conocimiento y el uso sostenible de la biodiversidad, promoviendo <strong>soluciones innovadoras y productivas (bioeconomía)</strong> para una Colombia competitiva, productiva y biodiversa.
+                </p>
+            </div>
+
+            <!-- Financiación (Col 2 & 3) -->
+            <div class="glass-card rounded-2xl p-6 md:col-span-2 border-t-4 border-t-minciencias-blue flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-4 text-minciencias-blue">
+                    <div class="p-3 bg-blue-50 rounded-xl"><i data-lucide="coins" class="w-6 h-6"></i></div>
+                    <h2 class="text-xl font-bold">Financiación y Duración</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-4">
+                        <div class="text-minciencias-green"><i data-lucide="banknote" class="w-8 h-8"></i></div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Monto por Proyecto</p>
+                            <p class="text-lg font-bold text-slate-800">$12.000M - $15.624M</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-4">
+                        <div class="text-amber-500"><i data-lucide="clock" class="w-8 h-8"></i></div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Plazo de Ejecución</p>
+                            <p class="text-lg font-bold text-slate-800">36 a 48 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Modalidades (Interactive Tabs) -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 mb-6 text-minciencias-blue">
+                    <div class="p-3 bg-blue-50 rounded-xl"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                    <h2 class="text-xl font-bold">Modalidades de Participación</h2>
+                </div>
+                
+                <div class="flex border-b border-slate-200 mb-4">
+                    <button onclick="switchTab('mod1')" id="btn-mod1" class="flex-1 py-3 text-center font-semibold border-b-2 border-minciencias-blue text-minciencias-blue transition-colors">Modalidad 1</button>
+                    <button onclick="switchTab('mod2')" id="btn-mod2" class="flex-1 py-3 text-center font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-colors">Modalidad 2</button>
+                </div>
+                
+                <div id="content-mod1" class="p-4 bg-blue-50 rounded-xl animate-fade-in-up">
+                    <h3 class="font-bold text-lg text-minciencias-blue mb-2">Fortalecimiento de capacidades territoriales</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        Enfocada en conocimiento, conservación, revalorización y uso sostenible de la biodiversidad y servicios ecosistémicos. Incluye líneas de I+D para la gestión del riesgo y cambio climático.
+                    </p>
+                </div>
+                
+                <div id="content-mod2" class="p-4 bg-green-50 rounded-xl hidden animate-fade-in-up">
+                    <h3 class="font-bold text-lg text-minciencias-green mb-2">Desarrollo e innovación en bioproductos</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        Desarrollo de bioproductos, bioservicios y modelos circulares. Busca la transición hacia sistemas productivos sostenibles y la consolidación de negocios verdes en bioeconomía.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Alianza Estratégica (Interactive Selection) -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 mb-6 text-minciencias-blue">
+                    <div class="p-3 bg-blue-50 rounded-xl"><i data-lucide="users" class="w-6 h-6"></i></div>
+                    <div>
+                        <h2 class="text-xl font-bold">Conformación de la Alianza</h2>
+                        <p class="text-xs text-red-500 font-semibold">* Requisito Habilitante Mínimo</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <button onclick="showAlianzaInfo('ies')" class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50 transition-all flex flex-col items-center text-center gap-2 group">
+                        <i data-lucide="graduation-cap" class="w-6 h-6 text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                        <span class="text-sm font-semibold text-slate-600">IES</span>
+                    </button>
+                    <button onclick="showAlianzaInfo('org')" class="p-3 rounded-xl border border-slate-200 hover:border-green-400 hover:bg-green-50 transition-all flex flex-col items-center text-center gap-2 group">
+                        <i data-lucide="users" class="w-6 h-6 text-slate-400 group-hover:text-green-600 transition-colors"></i>
+                        <span class="text-sm font-semibold text-slate-600">Comunidades</span>
+                    </button>
+                    <button onclick="showAlianzaInfo('terr')" class="p-3 rounded-xl border border-slate-200 hover:border-orange-400 hover:bg-orange-50 transition-all flex flex-col items-center text-center gap-2 group">
+                        <i data-lucide="map" class="w-6 h-6 text-slate-400 group-hover:text-orange-600 transition-colors"></i>
+                        <span class="text-sm font-semibold text-slate-600">Entidades Territ.</span>
+                    </button>
+                    <button onclick="showAlianzaInfo('emp')" class="p-3 rounded-xl border border-slate-200 hover:border-purple-400 hover:bg-purple-50 transition-all flex flex-col items-center text-center gap-2 group">
+                        <i data-lucide="building-2" class="w-6 h-6 text-slate-400 group-hover:text-purple-600 transition-colors"></i>
+                        <span class="text-sm font-semibold text-slate-600">Sector Empresa</span>
+                    </button>
+                </div>
+                
+                <div id="alianza-info" class="p-4 bg-slate-100 rounded-xl text-sm text-slate-700 min-h-[80px] flex items-center justify-center text-center italic border border-slate-200">
+                    Haz clic en los actores arriba para ver los requisitos mínimos de la alianza estratégica.
+                </div>
+            </div>
+        </div>
+
+        <!-- Secciones Centrales: Componentes, Talento Humano, Criterios -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Componentes Obligatorios (Accordion) -->
+            <div class="glass-card rounded-2xl p-6 lg:col-span-1 border border-slate-200">
+                <div class="flex items-center gap-3 mb-6 text-minciencias-blue">
+                    <div class="p-3 bg-blue-50 rounded-xl"><i data-lucide="puzzle" class="w-6 h-6"></i></div>
+                    <h2 class="text-xl font-bold">4 Componentes Obligatorios</h2>
+                </div>
+                <div class="space-y-3">
+                    <!-- Accordion Item 1 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <button onclick="toggleAccordion('acc1')" class="w-full p-4 text-left bg-slate-50 hover:bg-slate-100 font-semibold flex justify-between items-center transition-colors">
+                            <span>1. Generación de Conocimiento</span>
+                            <i data-lucide="chevron-down" id="icon-acc1" class="w-4 h-4 transition-transform duration-300"></i>
+                        </button>
+                        <div id="acc1" class="accordion-content max-h-0 opacity-0 overflow-hidden px-4 bg-white">
+                            <p class="py-3 text-sm text-slate-600">En ciencias naturales, ambientales, sociales, humanas y de tecnología e ingeniería.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 2 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <button onclick="toggleAccordion('acc2')" class="w-full p-4 text-left bg-slate-50 hover:bg-slate-100 font-semibold flex justify-between items-center transition-colors">
+                            <span>2. Uso y Transferencia (Tecnología)</span>
+                            <i data-lucide="chevron-down" id="icon-acc2" class="w-4 h-4 transition-transform duration-300"></i>
+                        </button>
+                        <div id="acc2" class="accordion-content max-h-0 opacity-0 overflow-hidden px-4 bg-white">
+                            <p class="py-3 text-sm text-slate-600">Innovación y validación de tecnologías para el uso sostenible o la mitigación del cambio climático.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 3 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <button onclick="toggleAccordion('acc3')" class="w-full p-4 text-left bg-slate-50 hover:bg-slate-100 font-semibold flex justify-between items-center transition-colors">
+                            <span>3. Apropiación Social (ASC)</span>
+                            <i data-lucide="chevron-down" id="icon-acc3" class="w-4 h-4 transition-transform duration-300"></i>
+                        </button>
+                        <div id="acc3" class="accordion-content max-h-0 opacity-0 overflow-hidden px-4 bg-white">
+                            <p class="py-3 text-sm text-slate-600">Estrategias transversales para democratizar la CTeI y generar espacios de diálogo de saberes.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 4 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <button onclick="toggleAccordion('acc4')" class="w-full p-4 text-left bg-slate-50 hover:bg-slate-100 font-semibold flex justify-between items-center transition-colors">
+                            <span>4. Gobernanza</span>
+                            <i data-lucide="chevron-down" id="icon-acc4" class="w-4 h-4 transition-transform duration-300"></i>
+                        </button>
+                        <div id="acc4" class="accordion-content max-h-0 opacity-0 overflow-hidden px-4 bg-white">
+                            <p class="py-3 text-sm text-slate-600">Fortalecer la gestión colectiva y biocultural de la biodiversidad y los servicios ecosistémicos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vinculación Talento Humano -->
+            <div class="glass-card rounded-2xl p-6 lg:col-span-1 border border-slate-200">
+                <div class="flex items-center gap-3 mb-6 text-minciencias-blue">
+                    <div class="p-3 bg-blue-50 rounded-xl"><i data-lucide="user-check" class="w-6 h-6"></i></div>
+                    <h2 class="text-xl font-bold">Talento Humano (Mínimo)</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-3 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition">
+                        <div class="bg-blue-100 text-blue-700 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0">1</div>
+                        <div>
+                            <p class="font-semibold text-sm">Doctor (Estancia Postdoctoral)</p>
+                            <p class="text-xs text-slate-500">12 a 24 meses</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 rounded-lg bg-green-50/50 hover:bg-green-50 transition">
+                        <div class="bg-green-100 text-green-700 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0">2</div>
+                        <div>
+                            <p class="font-semibold text-sm">Estudiantes de Maestría</p>
+                            <p class="text-xs text-slate-500">Máximo 24 meses</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 rounded-lg bg-amber-50/50 hover:bg-amber-50 transition">
+                        <div class="bg-amber-100 text-amber-700 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0">3</div>
+                        <div>
+                            <p class="font-semibold text-sm">Jóvenes Investigadores (Pregrado)</p>
+                            <p class="text-xs text-slate-500">12 meses (Beca-pasantía)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 rounded-lg bg-purple-50/50 hover:bg-purple-50 transition">
+                        <div class="bg-purple-100 text-purple-700 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0">3</div>
+                        <div>
+                            <p class="font-semibold text-sm">Jóvenes Investigadores (Graduados)</p>
+                            <p class="text-xs text-slate-500">12 meses (Beca-pasantía)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Criterios de Evaluación -->
+            <div class="glass-card rounded-2xl p-6 lg:col-span-1 border border-slate-200">
+                <div class="flex items-center gap-3 mb-6 text-minciencias-blue">
+                    <div class="p-3 bg-blue-50 rounded-xl"><i data-lucide="bar-chart-2" class="w-6 h-6"></i></div>
+                    <div>
+                        <h2 class="text-xl font-bold">Criterios de Evaluación</h2>
+                        <p class="text-xs font-semibold text-minciencias-green">Min. aprobatorio: 75 / 100 pts</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- Progress Bar 1 -->
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Técnico-científica y presupuestal</span>
+                            <span class="text-minciencias-blue">45 pts</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-minciencias-blue h-2 rounded-full" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <!-- Progress Bar 2 -->
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Sostenibilidad y Gobernanza</span>
+                            <span class="text-minciencias-green">18 pts</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-minciencias-green h-2 rounded-full" style="width: 18%"></div>
+                        </div>
+                    </div>
+                    <!-- Progress Bar 3 -->
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Capacidad técnica y alianza</span>
+                            <span class="text-purple-500">17 pts</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 17%"></div>
+                        </div>
+                    </div>
+                    <!-- Progress Bar 4 -->
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Demandas territoriales</span>
+                            <span class="text-amber-500">10 pts</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-amber-500 h-2 rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <!-- Progress Bar 5 -->
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Enfoque Diferencial</span>
+                            <span class="text-rose-500">10 pts</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-rose-500 h-2 rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Flujo de Postulación (Interactive Stepper) -->
+        <div class="glass-card rounded-2xl p-6 border-t-4 border-t-amber-500">
+            <div class="flex items-center gap-3 mb-8 text-minciencias-blue">
+                <div class="p-3 bg-amber-50 rounded-xl text-amber-600"><i data-lucide="git-merge" class="w-6 h-6"></i></div>
+                <h2 class="text-xl font-bold">Ruta General de Postulación</h2>
+            </div>
+            
+            <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center w-full px-4 md:px-0 space-y-8 md:space-y-0">
+                <!-- Line background (Desktop) -->
+                <div class="hidden md:block absolute top-6 left-[5%] right-[5%] h-1 bg-slate-200 -z-10"></div>
+                <!-- Line background (Mobile) -->
+                <div class="md:hidden absolute top-4 bottom-4 left-[2.25rem] w-1 bg-slate-200 -z-10"></div>
+
+                <!-- Step 1 -->
+                <div class="flex flex-row md:flex-col items-center gap-4 md:gap-3 text-center md:w-1/6 step-active cursor-pointer group" onclick="highlightStep(this)">
+                    <div class="step-icon w-12 h-12 rounded-full border-4 border-slate-200 bg-white flex items-center justify-center font-bold transition-colors shadow-sm group-hover:border-minciencias-green group-hover:text-minciencias-green z-10 shrink-0">1</div>
+                    <div class="text-left md:text-center">
+                        <p class="font-bold text-sm text-slate-800">Conformar Alianza</p>
+                        <p class="text-xs text-slate-500 mt-1">Articulación de los 4 actores obligatorios.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-row md:flex-col items-center gap-4 md:gap-3 text-center md:w-1/6 cursor-pointer group" onclick="highlightStep(this)">
+                    <div class="step-icon w-12 h-12 rounded-full border-4 border-slate-200 bg-white text-slate-400 flex items-center justify-center font-bold transition-colors shadow-sm group-hover:border-minciencias-green group-hover:text-minciencias-green z-10 shrink-0">2</div>
+                    <div class="text-left md:text-center">
+                        <p class="font-bold text-sm text-slate-800">Demandas Territoriales</p>
+                        <p class="text-xs text-slate-500 mt-1">Seleccionar según el departamento (Anexo 4).</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-row md:flex-col items-center gap-4 md:gap-3 text-center md:w-1/6 cursor-pointer group" onclick="highlightStep(this)">
+                    <div class="step-icon w-12 h-12 rounded-full border-4 border-slate-200 bg-white text-slate-400 flex items-center justify-center font-bold transition-colors shadow-sm group-hover:border-minciencias-green group-hover:text-minciencias-green z-10 shrink-0">3</div>
+                    <div class="text-left md:text-center">
+                        <p class="font-bold text-sm text-slate-800">Formulación</p>
+                        <p class="text-xs text-slate-500 mt-1">Doc. Técnico (Anexo 2) y Presupuesto (Anexo 3).</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-row md:flex-col items-center gap-4 md:gap-3 text-center md:w-1/6 cursor-pointer group" onclick="highlightStep(this)">
+                    <div class="step-icon w-12 h-12 rounded-full border-4 border-slate-200 bg-white text-slate-400 flex items-center justify-center font-bold transition-colors shadow-sm group-hover:border-minciencias-green group-hover:text-minciencias-green z-10 shrink-0">4</div>
+                    <div class="text-left md:text-center">
+                        <p class="font-bold text-sm text-slate-800">Gobernanza y Avales</p>
+                        <p class="text-xs text-slate-500 mt-1">Aval institucional y Modelo de Gobernanza (Anexo 1).</p>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="flex flex-row md:flex-col items-center gap-4 md:gap-3 text-center md:w-1/6 cursor-pointer group" onclick="highlightStep(this)">
+                    <div class="step-icon w-12 h-12 rounded-full border-4 border-slate-200 bg-white text-slate-400 flex items-center justify-center font-bold transition-colors shadow-sm group-hover:border-minciencias-green group-hover:text-minciencias-green z-10 shrink-0">5</div>
+                    <div class="text-left md:text-center">
+                        <p class="font-bold text-sm text-slate-800">Inscripción Sistemas</p>
+                        <p class="text-xs text-slate-500 mt-1">Registro en SIGP Minciencias y MGA Web.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-xs text-slate-400 italic">
+                * Haz clic en los pasos de la ruta para marcarlos como completados (interactivo).
+            </div>
+        </div>
+        
+        <footer class="text-center text-sm text-slate-500 pb-8">
+            Basado en los Términos de Referencia de la Convocatoria 48 del SGR - Minciencias. <br>
+            Documento de uso informativo y de referencia.
+        </footer>
+
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Tabs Logic (Modalidades)
+        function switchTab(tabId) {
+            // Reset styles
+            document.getElementById('btn-mod1').className = "flex-1 py-3 text-center font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-colors";
+            document.getElementById('btn-mod2').className = "flex-1 py-3 text-center font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-colors";
+            document.getElementById('content-mod1').classList.add('hidden');
+            document.getElementById('content-mod2').classList.add('hidden');
+
+            // Set Active
+            if (tabId === 'mod1') {
+                document.getElementById('btn-mod1').className = "flex-1 py-3 text-center font-semibold border-b-2 border-minciencias-blue text-minciencias-blue transition-colors";
+                document.getElementById('content-mod1').classList.remove('hidden');
+            } else {
+                document.getElementById('btn-mod2').className = "flex-1 py-3 text-center font-semibold border-b-2 border-minciencias-green text-minciencias-green transition-colors";
+                document.getElementById('content-mod2').classList.remove('hidden');
+            }
+        }
+
+        // Alianza Logic (Interactive Information Panel)
+        const alianzaData = {
+            'ies': "<strong>Instituciones de Educación Superior (IES):</strong> Al menos una (1) Universidad o Institución Universitaria acreditada institucionalmente.",
+            'org': "<strong>Organizaciones Comunitarias / Étnicas / Campesinas:</strong> Al menos una (1) organización domiciliada en la región SGR de ejecución.",
+            'terr': "<strong>Entidades Territoriales:</strong> Al menos dos (2) de diferentes departamentos (una debe ser Gobernación y otra pertenecer al depto de ejecución).",
+            'emp': "<strong>Sector Empresarial:</strong> Al menos una (1) empresa (micro, pequeña o mediana), gremio, o cámara de comercio de la región SGR."
+        };
+
+        function showAlianzaInfo(actor) {
+            const infoBox = document.getElementById('alianza-info');
+            infoBox.innerHTML = alianzaData[actor];
+            infoBox.classList.remove('bg-slate-100', 'text-slate-700', 'italic');
+            infoBox.classList.add('bg-blue-50', 'text-slate-800', 'border-blue-200');
+            
+            // Add a small bounce animation effect
+            infoBox.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                infoBox.style.transform = 'scale(1)';
+                infoBox.style.transition = 'transform 0.2s ease-out';
+            }, 50);
+        }
+
+        // Accordion Logic (Componentes)
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                // Close
+                content.style.maxHeight = '0px';
+                content.style.opacity = '0';
+                content.style.paddingTop = '0';
+                content.style.paddingBottom = '0';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Open (Close others first for a cleaner look, optional)
+                ['acc1', 'acc2', 'acc3', 'acc4'].forEach(accId => {
+                    if (accId !== id) {
+                        const other = document.getElementById(accId);
+                        const otherIcon = document.getElementById('icon-' + accId);
+                        other.style.maxHeight = '0px';
+                        other.style.opacity = '0';
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.opacity = '1';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Stepper Logic (Línea de tiempo)
+        function highlightStep(element) {
+            // Toggle active state on click
+            element.classList.toggle('step-active');
+            
+            // Re-style the icon based on state
+            const icon = element.querySelector('.step-icon');
+            if(element.classList.contains('step-active')){
+                icon.classList.remove('text-slate-400');
+            } else {
+                icon.classList.add('text-slate-400');
+            }
+        }
+    </script>
+</body>
+</html>
